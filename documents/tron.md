@@ -2,8 +2,6 @@
 
 1. create account here [Tron Grid](https://www.trongrid.io/) to get API key
 
-### Requirements
-
 ### How to get transactions ?
 
 - get transaction -> [reference](https://developers.tron.network/reference/get-transaction-info-by-account-address)
