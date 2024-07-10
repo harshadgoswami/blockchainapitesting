@@ -1,10 +1,20 @@
-
-import tron from '@api/tron';
+import axios from "axios";
 
 export const getTronAddressTransaction = async (address: string) => {
-    const transaction = await tron.getTransactionInfoByAccountAddress({ address: address })
-        .then(({ data }) => console.log(data))
-        .catch(err => console.error(err));
+    const options = {
+        method: 'GET',
+        url: `https://api.shasta.trongrid.io/v1/accounts/${address}/transactions`,
+        headers: { accept: 'application/json' }
+    };
 
-    return transaction;
+    return axios
+        .request(options)
+        .then(function (response) {
+            console.log(response.data);
+            return response.data;
+        })
+        .catch(function (error) {
+            console.error(error);
+            return [];
+        });
 }

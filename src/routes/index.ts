@@ -13,8 +13,7 @@ routes.get("/", (req: Request, res: Response) => {
 routes.get("/tronget", async (req: Request, res: Response) => {
 
     // Replace with the actual address you want to check
-    const accountAddress = 'TXRq2ovfj98DHoMz4MpxMULKPvimH3vaAS';
-    //const transaction = await getTronTransaction(accountAddress);
+    const accountAddress = 'TYkqQVTjv8Zk7tH8g9kXs2Bqx5ramKyhaa';
 
     const transaction = await getTronAddressTransaction(accountAddress);
     console.log({ transaction });
