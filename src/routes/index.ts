@@ -15,10 +15,22 @@ routes.get("/tronget", async (req: Request, res: Response) => {
     // Replace with the actual address you want to check
     const accountAddress = 'TYkqQVTjv8Zk7tH8g9kXs2Bqx5ramKyhaa';
 
-    const transaction = await getTronAddressTransaction(accountAddress);
-    console.log({ transaction });
+    const transactions = await getTronAddressTransaction(accountAddress);
 
-    res.status(200).json({ message: "welcome", transaction });
+    //console.log(JSON.stringify(transactions));
+
+
+    transactions.map((tx) => {
+
+        tx.raw_data.contract.map((d) => {
+
+            if (d.parameter.value.amount) {
+                console.log({ tx: d.parameter.value })
+            }
+        });
+    });
+
+    res.status(200).json({ message: "welcome" });
 });
 
 export default routes;
