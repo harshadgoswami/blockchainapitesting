@@ -24,3 +24,7 @@ axios
     console.error(error);
   });
 ```
+
+### USDT Contract on Shata Network ?
+
+- [reference](https://shasta.tronscan.org/#/token20/TG3XXyExBkPp9nzdajDZsozEu4BkaSJozs/holders) for getting TRC20 Transactions
